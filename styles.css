@@ -1,0 +1,94 @@
+
+:root {
+    --neon-color: #ff00ff;
+    --gradient-color: #3366ff;
+    --pulse-color: #00ff99;
+    --glow-color: #ff0066;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .glow-button {
+    background-color: transparent;
+    border: 2px solid;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .neon-button {
+    border-color: var(--neon-color);
+    text-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color);
+    box-shadow: 0 0 5px var(--neon-color), 0 0 20px var(--neon-color);
+  }
+  
+  .neon-button:hover {
+    box-shadow: 0 0 20px var(--neon-color), 0 0 40px var(--neon-color);
+    transform: scale(1.1);
+  }
+  .gradient-button {
+    background: linear-gradient(45deg, #ff0044, #3366ff);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 25px var(--gradient-color);
+  }
+  .pulse-button {
+    border-color: var(--pulse-color);
+    box-shadow: 0 0 5px var(--pulse-color), 0 0 15px var(--pulse-color);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px var(--pulse-color), 0 0 15px var(--pulse-color);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--pulse-color), 0 0 30px var(--pulse-color);
+    }
+    100% {
+      box-shadow: 0 0 5px var(--pulse-color), 0 0 15px var(--pulse-color);
+    }
+  }
+  .glow-button {
+    background-color:#333;
+    border-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color), 0 0 15px var(--glow-color);
+  }
+  
+  .glow-button:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    transform: scale(1.05);
+  }
+  @media (max-width: 600px) {
+    .button-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
